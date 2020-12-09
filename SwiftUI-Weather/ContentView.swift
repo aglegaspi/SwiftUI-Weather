@@ -34,6 +34,18 @@ struct ContentView: View {
                 }
                 
                 Spacer()
+                
+                HStack {
+                    
+                    WeatherDayView(dayOfWeek: "TUE", imageName: "sun.max.fill", temperature: 74)
+                    WeatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temperature: 76)
+                    WeatherDayView(dayOfWeek: "THU", imageName: "cloud.fill", temperature: 78)
+                    WeatherDayView(dayOfWeek: "FRI", imageName: "cloud.rain.fill", temperature: 77)
+                    WeatherDayView(dayOfWeek: "SAT", imageName: "sun.max.fill", temperature: 83)
+                
+                }
+                
+                Spacer()
             }
         }
     }
@@ -42,5 +54,28 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct WeatherDayView: View {
+    var dayOfWeek: String
+    var imageName: String
+    var temperature: Int
+    
+    var body: some View {
+        VStack(spacing: 10) {
+            Text(dayOfWeek)
+                .font(.system(size: 20, weight: .bold))
+                .foregroundColor(.white)
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            Text("\(temperature)°")
+                .font(.system(size: 20, weight: .bold))
+                .foregroundColor(.white)
+            
+        }
     }
 }
