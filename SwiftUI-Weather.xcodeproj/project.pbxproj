@@ -11,6 +11,7 @@
 		EC727718257FD77B000D630A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC727717257FD77B000D630A /* ContentView.swift */; };
 		EC72771A257FD781000D630A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC727719257FD781000D630A /* Assets.xcassets */; };
 		EC72771D257FD781000D630A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC72771C257FD781000D630A /* Preview Assets.xcassets */; };
+		ECED34A4258864C70076FBB3 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED34A3258864C70076FBB3 /* WeatherButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		EC727719257FD781000D630A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC72771C257FD781000D630A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC72771E257FD781000D630A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECED34A3258864C70076FBB3 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				EC727715257FD77B000D630A /* SwiftUI_WeatherApp.swift */,
 				EC727717257FD77B000D630A /* ContentView.swift */,
+				ECED34A3258864C70076FBB3 /* WeatherButton.swift */,
 				EC727719257FD781000D630A /* Assets.xcassets */,
 				EC72771E257FD781000D630A /* Info.plist */,
 				EC72771B257FD781000D630A /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				EC727718257FD77B000D630A /* ContentView.swift in Sources */,
 				EC727716257FD77B000D630A /* SwiftUI_WeatherApp.swift in Sources */,
+				ECED34A4258864C70076FBB3 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

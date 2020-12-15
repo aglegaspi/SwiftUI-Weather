@@ -17,27 +17,26 @@ struct ContentView: View {
                 
                 CityTextView(cityName: "Cupertino, CA")
                 
-                VStack(spacing: 10) {
-                    
-                    Image(systemName: "cloud.sun.fill")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 180, height: 180, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-                    Text("76°")
-                        .font(.system(size: 70, weight: .medium))
-                        .foregroundColor(.white)
-                }
-                .padding(.bottom, 40)
+                MainWeatherStatusView(imageName: "cloud.sun.fill",
+                                      temperature: 76)
                 
                 HStack {
                     
-                    WeatherDayView(dayOfWeek: "TUE", imageName: "sun.max.fill", temperature: 74)
-                    WeatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temperature: 76)
-                    WeatherDayView(dayOfWeek: "THU", imageName: "cloud.fill", temperature: 78)
-                    WeatherDayView(dayOfWeek: "FRI", imageName: "cloud.rain.fill", temperature: 77)
-                    WeatherDayView(dayOfWeek: "SAT", imageName: "sun.max.fill", temperature: 83)
+                    WeatherDayView(dayOfWeek: "TUE",
+                                   imageName: "sun.max.fill",
+                                   temperature: 74)
+                    WeatherDayView(dayOfWeek: "WED",
+                                   imageName: "sun.max.fill",
+                                   temperature: 76)
+                    WeatherDayView(dayOfWeek: "THU",
+                                   imageName: "cloud.fill",
+                                   temperature: 78)
+                    WeatherDayView(dayOfWeek: "FRI",
+                                   imageName: "cloud.rain.fill",
+                                   temperature: 77)
+                    WeatherDayView(dayOfWeek: "SAT",
+                                   imageName: "sun.max.fill",
+                                   temperature: 83)
                 
                 }
                 
@@ -46,11 +45,9 @@ struct ContentView: View {
                 Button {
                     print("tapped")
                 } label: {
-                    Text("Change Day Time")
-                        .frame(width: 280, height: 50)
-                        .background(Color.white)
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .cornerRadius(10)
+                    WeatherButton(title: "Change Day Time",
+                                  textColor: .blue,
+                                  backgroundColor: .white)
                 }
                 
                 Spacer()
@@ -64,6 +61,8 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
 
 struct WeatherDayView: View {
     var dayOfWeek: String
@@ -89,7 +88,6 @@ struct WeatherDayView: View {
 }
 
 struct BackgroundView: View {
-    
     var topColor: Color
     var bottomColor: Color
     
@@ -102,7 +100,6 @@ struct BackgroundView: View {
 }
 
 struct CityTextView: View {
-    
     var cityName: String
     
     var body: some View {
@@ -112,3 +109,26 @@ struct CityTextView: View {
             .padding(.top,100)
     }
 }
+
+struct MainWeatherStatusView: View {
+    var imageName: String
+    var temperature: Int
+    
+    var body: some View {
+        VStack(spacing: 10) {
+            
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 180, height: 180, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            
+            Text("\(temperature)°")
+                .font(.system(size: 70, weight: .medium))
+                .foregroundColor(.white)
+        }
+        .padding(.bottom, 40)
+    }
+}
+
+
