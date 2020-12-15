@@ -10,9 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, Color("lightBlue")]),
-                           startPoint: .topLeading, endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+            
+            BackgroundView(topColor: .blue, bottomColor: Color("lightBlue"))
             
             VStack {
                 
@@ -43,6 +42,18 @@ struct ContentView: View {
                     WeatherDayView(dayOfWeek: "FRI", imageName: "cloud.rain.fill", temperature: 77)
                     WeatherDayView(dayOfWeek: "SAT", imageName: "sun.max.fill", temperature: 83)
                 
+                }
+                
+                Spacer()
+                
+                Button {
+                    print("tapped")
+                } label: {
+                    Text("Change Day Time")
+                        .frame(width: 280, height: 50)
+                        .background(Color.white)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .cornerRadius(10)
                 }
                 
                 Spacer()
@@ -77,5 +88,18 @@ struct WeatherDayView: View {
                 .foregroundColor(.white)
             
         }
+    }
+}
+
+struct BackgroundView: View {
+    
+    var topColor: Color
+    var bottomColor: Color
+    
+    var body: some View {
+        
+        LinearGradient(gradient: Gradient(colors: [topColor,bottomColor]),
+                       startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
     }
 }
