@@ -15,10 +15,7 @@ struct ContentView: View {
             
             VStack {
                 
-                Text("Cupertino, CA")
-                    .font(.system(size: 32, weight: .medium, design: .default))
-                    .foregroundColor(.white)
-                    .padding(.top,100)
+                CityTextView(cityName: "Cupertino, CA")
                 
                 VStack(spacing: 10) {
                     
@@ -101,5 +98,17 @@ struct BackgroundView: View {
         LinearGradient(gradient: Gradient(colors: [topColor,bottomColor]),
                        startPoint: .topLeading, endPoint: .bottomTrailing)
             .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct CityTextView: View {
+    
+    var cityName: String
+    
+    var body: some View {
+        Text(cityName)
+            .font(.system(size: 32, weight: .medium, design: .default))
+            .foregroundColor(.white)
+            .padding(.top,100)
     }
 }
